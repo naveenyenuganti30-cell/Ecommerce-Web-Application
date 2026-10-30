@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-deep-teal: #224248;
+    --color-teal: #325E6A;
+    --color-aqua: #44A1A4;
+    --color-orange: #FF9A00;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #325E6A33;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #44A1A488;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel {
+  background: rgba(34, 66, 72, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(68, 161, 164, 0.15);
+}
+
+/* Button & Card Utilities */
+.btn-primary {
+  @apply bg-deep-teal text-white hover:bg-teal-mid active:scale-[0.98] transition-all duration-200 font-medium px-5 py-2.5 rounded-xl shadow-sm hover:shadow-soft inline-flex items-center justify-center gap-2;
+}
+
+.btn-accent {
+  @apply bg-orange-accent text-white hover:bg-orange-accent-500 active:scale-[0.98] transition-all duration-200 font-medium px-5 py-2.5 rounded-xl shadow-sm hover:shadow-soft inline-flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-white dark:bg-gray-800 text-deep-teal dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/60 active:scale-[0.98] transition-all duration-200 font-medium px-5 py-2.5 rounded-xl inline-flex items-center justify-center gap-2;
+}
+
+.badge-aqua {
+  @apply bg-aqua/10 text-aqua dark:bg-aqua/20 dark:text-aqua-300 font-medium text-xs px-2.5 py-1 rounded-full;
+}
+
+.badge-orange {
+  @apply bg-orange-accent/10 text-orange-accent-600 dark:bg-orange-accent/20 dark:text-orange-accent-300 font-medium text-xs px-2.5 py-1 rounded-full;
+}
